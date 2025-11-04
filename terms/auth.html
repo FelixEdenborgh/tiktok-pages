@@ -1,6 +1,18 @@
-<html>
-<body>
-  <h2>Authorization complete!</h2>
-  <p>Kopiera koden från URL:en ovan (efter ?code=)</p>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TikTok Auth Redirect</title>
+  </head>
+  <body style="font-family: sans-serif;">
+    <h2>✅ TikTok inloggning klar!</h2>
+    <p>Kopiera koden från URL:en ovan (efter <b>?code=</b>) och klistra in i Python-scriptet.</p>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code");
+      if (code) {
+        document.body.innerHTML += `<p><b>Kod:</b> ${code}</p>`;
+      }
+    </script>
+  </body>
 </html>
